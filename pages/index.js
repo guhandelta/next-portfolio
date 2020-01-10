@@ -1,14 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
+import Layout from '../components/layout'
 
 const index = () => {
     return (
-        <div>
-            <Link to="/about" href="/about">
-                <a>About</a>
-            </Link>
+        <Layout title="Home">
             <h1>App Works!!........</h1>
-        </div>
+        </Layout>
     )
 }
 export default index;
