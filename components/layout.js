@@ -1,9 +1,24 @@
-import React from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
+import Router from 'next/router' // To detect when the route change is triggered, so a loading icon may be given to fill in pageload time
+import NProgress from 'nprogress'
+
+// onRouteChangeStart hook is used to find when the route change is beginning
+Router.onRouteChangeStart = url => {
+    console.log(url);
+    NProgress.start();
+}
+
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 const Layout = ({ children, title }) => {
     return (
         <div className="root">
+            <Head>
+                <title>NextJSPortfolio</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+            </Head>
             <header>
                 <Link href="/"><a>Home</a></Link>&emsp;&emsp;
                 <Link href="/about"><a>About</a></Link>&emsp;&emsp;
