@@ -21,7 +21,8 @@ const Layout = ({ children, title }) => {
             <header>
                 <Link href="/"><a>Home</a></Link>&emsp;&emsp;
                 <Link href="/about"><a>About</a></Link>&emsp;&emsp;
-                <Link href="/contact"><a>Contact</a></Link>
+                <Link href="/contact"><a>Contact</a></Link>&emsp;&emsp;
+                <Link href="/blog"><a>Blog</a></Link>
             </header>
             <h1>{title}</h1>
             {children}
